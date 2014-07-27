@@ -290,12 +290,12 @@ class ParagraphBase(Flowable):
                         line = typeset_line(line)
                     prev_word_state = copy(state)
                     word = Word()
-                word.append((span, chars))
+                if chars == '\n':
+                    line.add_current_word()
+                    line = typeset_line(line, last_line=True, force=True)
+                else:
+                    word.append((span, chars))
 
-                # if chars == '\n':
-                #     line.add_current_word()
-                #     line = typeset_line(line, last_line=True, force=True)
-                #     line_span_send = line.new_span(span, document).send
             except StopIteration:
                 line.append_word(word, container, descender)      # TODO: handle line overflow
                 if line:
