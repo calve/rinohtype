@@ -288,12 +288,14 @@ class ParagraphBase(Flowable):
                         # else:
                         #     state.prepend_item(word)
                         line = typeset_line(line)
-                    prev_word_state = copy(state)
+                        state = prev_word_state
+                        continue
                     word = Word()
                 if chars == '\n':
                     line.add_current_word()
                     line = typeset_line(line, last_line=True, force=True)
                 else:
+                    prev_word_state = copy(state)
                     word.append((span, chars))
 
             except StopIteration:

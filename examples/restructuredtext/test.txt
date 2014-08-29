@@ -1,0 +1,25 @@
+============
+ Main Title
+============
+
+:Date: $Date: 2013-07-03 09:39:52 +0000 (Wed, 03 Jul 2013) $
+:Revision: $Revision: 7677 $
+:Web site: http://docutils.sourceforge.net/
+:Copyright: This document has been placed in the public domain.
+
+Section Title
+-------------
+
+In order to separate questions, lists can be used:
+
+   1. :Extremely wide field name: What kind of question can we
+          put here?
+      :A: Any kind we like!
+
+   2. :Q: How many answers can a question have? This is a very very very long question indeed!
+      :A: It can have one,
+      :A: or more.
+      :A3: Answers can be numbered like this.
+      :A: 1. Or like this.
+          2. We're flexible!
+

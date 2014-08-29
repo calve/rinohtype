@@ -5,5 +5,5 @@ ROOTDIR="$THISDIR/../.."
 
 export PYTHONPATH=$ROOTDIR:$PYTHONPATH
 
-env python3 test.py
+time env python3 test.py
 
