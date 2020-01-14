@@ -39,7 +39,10 @@ class Object(object):
         self.indirect = indirect
 
     def __repr__(self):
-        return '{}({})'.format(self.__class__.__name__, self._repr())
+        return self._repr()
+
+    def __str__(self):
+        return self._repr()
 
     @property
     def object(self):
