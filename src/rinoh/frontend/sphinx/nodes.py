@@ -137,22 +137,22 @@ class Literal_Block(rst.Literal_Block):
         if language in ('py', 'python'):
             if text.startswith('>>>'):
                 # interactive session
-                lexer = lexers['pycon']
+                lexer = get_lexer_by_name('pycon')
             else:
-                lexer = lexers['python']
+                lexer = get_lexer_by_name('python')
         elif language in ('py3', 'python3', 'default'):
             if text.startswith('>>>'):
-                lexer = lexers['pycon3']
+                lexer = get_lexer_by_name('pycon3')
             else:
-                lexer = lexers['python3']
+                lexer = get_lexer_by_name('python3')
         elif language == 'guess':
             try:
                 lexer = guess_lexer(text)
             except Exception:
-                lexer = lexers['none']
+                lexer = get_lexer_by_name('none')
         else:
             if language in lexers:
-                lexer = lexers[language]
+                lexer = get_lexer_by_name(language)
             else:
                 try:
                     lexer = lexers[language] = get_lexer_by_name(language)
